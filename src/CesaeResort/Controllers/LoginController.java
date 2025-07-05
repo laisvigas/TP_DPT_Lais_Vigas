@@ -1,5 +1,4 @@
 package CesaeResort.Controllers;
-
 import CesaeResort.Models.User;
 import CesaeResort.Repositories.UserRepository;
 

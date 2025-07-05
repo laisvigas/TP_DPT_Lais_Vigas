@@ -16,13 +16,24 @@ public class Experiencia {
         this.preco_crianca = preco_crianca;
     }
 
-    @Override
-    public String toString() {
-        return "idExperiencia=" + idExperiencia +
-                "| nome=" + nome +
-                "| id_guia_experiencia=" + id_guia_experiencia +
-                "| preco_adulto=" + preco_adulto +
-                "| preco_crianca=" + preco_crianca +
-                '\n';
+
+    public String getIdExperiencia() {
+        return idExperiencia;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getId_guia_experiencia() {
+        return id_guia_experiencia;
+    }
+
+    public float getPreco_adulto() {
+        return preco_adulto;
+    }
+
+    public float getPreco_crianca() {
+        return preco_crianca;
     }
 }

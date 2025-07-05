@@ -18,8 +18,8 @@ public class ClientView {
             System.out.println("\n\n********** MENU CLIENT **********");
             System.out.println("1. Quartos Disponíveis");
             System.out.println("2. Experiências Disponíveis");
-            System.out.println("3. Experiência Favorita");
-            System.out.println("4. Esperiêcias Top-Seller");
+            System.out.println("3. Experiência(s) Favorita(s)");
+            System.out.println("4. Esperiêcia(s) Top-Seller");
             System.out.println("5. Avaliar Experiência");
             System.out.println("0. Voltar");
 
@@ -30,7 +30,6 @@ public class ClientView {
                 case 1:
                     System.out.println("\n***** Quartos Disponíveis *****");
                     System.out.println(this.clientController.consultarQuartos());
-                    System.out.println(this.clientController.consultarTipologia());
                     break;
                 case 2:
                     System.out.println("\n***** Experiências Disponíveis *****");
@@ -38,15 +37,15 @@ public class ClientView {
                     break;
                 case 3:
                     System.out.println("\n***** Experiência Favorita *****");
-                    System.out.println(this.clientController.highestRating());
+                    System.out.println(this.clientController.experienciaFavorita());
                     break;
                 case 4:
                     System.out.println("\n***** Esperiêcias Top-Seller *****");
-                    System.out.println(this.clientController.expTopSeller());
+                    System.out.println(this.clientController.experienciaTopSeller());
                     break;
                 case 5:
                     System.out.println("\n*****  Avaliar Experiência *****");
-                    System.out.println(this.clientController.avaliarExp());
+                    System.out.println(this.clientController.avaliarExperiencia());
                     break;
                 case 0:
                     break;
