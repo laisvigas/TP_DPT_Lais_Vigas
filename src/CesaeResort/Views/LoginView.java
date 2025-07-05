@@ -78,7 +78,8 @@ public class LoginView {
                 break;
 
             case "GESTAO":
-
+                RececionistaView rv = new RececionistaView();
+                rv.rececionistaMenu();
                 break;
 
             case "GUIA":

@@ -17,8 +17,4 @@ public class Ratings {
     public int getRatingExperiencia() {
         return ratingExperiencia;
     }
-
-    public String getIdExperiencia() {
-        return idExperiencia;
-    }
 }

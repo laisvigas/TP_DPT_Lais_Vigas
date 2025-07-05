@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CSVFileReader {
-
     public ArrayList<Quarto> quartosFileReader(String filePath) throws FileNotFoundException {
 
         // Abrimos o ficheiro e criamos um Scanner associado
@@ -197,5 +196,88 @@ public class CSVFileReader {
 
         // Terminando o ciclo (não há mais linhas)
         return ratingsArray;
+    }
+
+    public ArrayList<Reservas> reservasFileReader(String filePath) throws FileNotFoundException {
+
+        // Abrimos o ficheiro e criamos um Scanner associado
+        File reservasFile = new File(filePath);
+        Scanner reservasScanner = new Scanner(reservasFile);
+
+        // Criamos o ArrayList de ratings, vazio
+        ArrayList<Reservas> reservasArray = new ArrayList<>();
+
+        // Avançar o cabeçalho
+        reservasScanner.nextLine();
+
+        // Ciclo que vai correr para cada linha do ficheiro
+        while (reservasScanner.hasNextLine()) {
+
+            // Apanhamos a linha
+            String linha = reservasScanner.nextLine();
+
+            // Separamos a linha, com base no seu separador ","
+            String[] linhaSeparada = linha.split(",");
+
+            // Reunir todas as informações de reservas
+
+            //id,num_quarto,id_cliente,ano,mes,semana
+
+            String id = linhaSeparada[0];
+            int num_quarto = Integer.parseInt(linhaSeparada[1]);
+            String id_cliente = linhaSeparada[2];
+            int ano = Integer.parseInt(linhaSeparada[3]);
+            int mes = Integer.parseInt(linhaSeparada[4]);
+            int semana = Integer.parseInt(linhaSeparada[5]);
+
+            // Criar novo rating
+            Reservas newReserva = new Reservas(id, num_quarto, id_cliente, ano, mes, semana);
+
+            // Adicionamos ao Array
+            reservasArray.add(newReserva);
+        }
+
+        // Terminando o ciclo (não há mais linhas)
+        return reservasArray;
+    }
+
+    public ArrayList<Client> clienteFileReader(String filePath) throws FileNotFoundException {
+
+        // Abrimos o ficheiro e criamos um Scanner associado
+        File clientesFile = new File(filePath);
+        Scanner clientesScanner = new Scanner(clientesFile);
+
+        // Criamos o ArrayList de ratings, vazio
+        ArrayList<Client> clientesArray = new ArrayList<>();
+
+        // Avançar o cabeçalho
+        clientesScanner.nextLine();
+
+        // Ciclo que vai correr para cada linha do ficheiro
+        while (clientesScanner.hasNextLine()) {
+
+            // Apanhamos a linha
+            String linha = clientesScanner.nextLine();
+
+            // Separamos a linha, com base no seu separador ","
+            String[] linhaSeparada = linha.split(",");
+
+            String idCliente = linhaSeparada[0];
+            String nome = linhaSeparada[1];
+            String nacionalidade = linhaSeparada[2];
+            String email = linhaSeparada[3];
+            int telemovel = Integer.parseInt(linhaSeparada[4]);
+            String dataNasc = linhaSeparada[5];
+            boolean consentimento = Boolean.parseBoolean(linhaSeparada[6]);
+
+            // Criar novo rating
+            Client newClient = new Client(idCliente, nome, nacionalidade, email, telemovel, dataNasc, consentimento);
+
+            // Adicionamos ao Array
+            clientesArray.add(newClient);
+        }
+
+        // Terminando o ciclo (não há mais linhas)
+        return clientesArray;
     }
 }
